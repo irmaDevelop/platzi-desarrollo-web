@@ -1,0 +1,387 @@
+/* 
+CMD + / para comentar
+
+reglas: conjunto de selectores, declaraciones, propiedades y valores
+selectores: identificar a uno o mas de elemento dentro de html ejem. Header
+declaraciones: todo lo que está dentro de las llaves, se componen por propiedades y valores
+propiedades: 
+valores: */
+
+/*las etiquetas son selector de etiqueta*/
+/* header{ 
+    background: #83AF9B;
+    color: red
+} */
+
+/*selector descendente, es un hijo de otro elemento*/
+/* body header div nav ol li a */
+/* Selector de id (Los ids son unicos) */
+/* se usa # para denorar el selector de de ids */
+/* #portafolio */
+
+/* Selectos de clase (las clases permite agrupar elementos) */
+/* Selector de clase se denota con . */
+/* .link */
+
+
+body{
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: normal; /* que es lo mismo que el valor de 400 */
+    /* font-style: italic; */
+    
+}
+
+
+h1{
+    font-size: 30px;
+    line-height: 1.5em; /*Si es 0px las lineas se sobreponen, como minimo debe tener el el valor del tamaño de la fuente */
+                        /*1.5em que es lo mismo que 150% */
+    letter-spacing: 2.1px;
+    /* text-transform: uppercase; */
+    /* text-decoration: underline; */
+    color: white;
+    /* top right bottom left */
+    /* margin: 100px 150px 70px 30px; */
+    margin: 0;
+}
+
+h1 strong{
+    color: #026fff;
+}
+
+h2 {
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.hero{
+    height: 300px;
+    /* background-image: url(../images/hero.jpg); */
+    background-color: #022f31;
+    /* background-size: 500px 300px;  */
+    /* ancho alto */
+    /* background-repeat: no-repeat; */
+    /* background-position-x: right; */
+
+    /* esta linea hace que automaticamente los elementos pierdan el margen */
+    display: flex;
+    align-items: center;
+}
+
+.hero-image{
+    /* hace que la imagen se corrija de lo que estaba ensanchada */
+    object-fit: cover;
+}
+
+.portfolio{
+    background: #fafafa;
+    padding: 20px;
+}
+
+.project{
+    /*tamaños tipo estilo */
+    /* border-top: 10px solid red;
+    border-right: 10px solid green;
+    border-left: 10px solid green;
+    border-bottom: 10px solid green; */
+
+    /* si no hubiera este dato por defecto toma el color del texto que encierra current color */
+    /* border-top-color:aquamarine; 
+    border-width: 9px;
+    border-style: solid; */
+    /* border-style: ridge; */
+
+
+    border: 1px solid gray;
+    /* Con border-radius y border-top-left-radius se logra lo mismo que con 
+    border-top-left-radius, border-top-right-radius border-bottom-right-radius y border-bottom-left-radius */
+    border-radius: 10px;
+    /* border-top-left-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; */
+    
+    /* quitamos el margen por que el portfolio ya tiene espaciado
+    interno o padding */
+    /* margin: 10px; */
+    margin-bottom: 15px;
+    /* margin-top: 15px; 
+    margin-left: 15px;
+    margin-right: 15px;  */
+
+    padding: 20px;
+    
+    /* mientras no se defina un background de este elemento hereda la propiedad del padre. */
+    background: white;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+
+}
+
+.project-details {
+    width: 500px;
+}
+
+.project-course ,
+.project-date,
+.project-url {
+    margin: 10px 0;
+}
+
+.project-description{
+    font-size: 18px;
+}
+
+.project strong{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* .project-date{
+    margin: 10px 0;
+} */
+
+.project-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-imageConteiner{
+    width: 500px;
+}
+
+header{
+    background-color:#07dfea;
+    color: black; /* para dar color a los textos */
+    display: flex;
+    align-items: center;
+    height: 60px; /* obtenido del alto del logo 128 */
+    justify-content: space-between;
+}
+ol, ul{
+    margin: 0;
+    padding: 0;
+    
+    /* list-style es el que hace que se muestren los numeritos */
+    list-style: none;
+}
+
+figure{
+    /* hace que el logo por ejemplo se peque todalmente al filo
+    de la pantalla */
+    margin: 0;
+}
+
+.header a{
+    color: black;
+    text-decoration: none; /*hace que no aparezcan con subrayado las anclas del de header (menu) */
+}
+
+.menu{
+    /* herencia explicita es decir del padre header 90px */
+    height: inherit;
+}
+
+ol {
+    display: flex;
+    /* herencia explicita es decir del padre menu*/
+    height: inherit;
+}
+
+.header ol li{
+    height: inherit;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 10px;
+}
+
+.flexbox{
+    /* hace que los elementos hijos en este caso box se pongan en linea horizontal ya que se encontraban en vertical */
+    /* solo afecta a los hijos directos. */
+    display: flex;
+    /* flex-direction: column; */
+
+    /* valor por defecto */
+    /* flex-wrap: nowrap;  */
+    
+    /* hace que lo elemetos caigan al no encontrar espacio en el flex, esto despues de flex-shrink=0 del hijo "box" */
+    flex-wrap: wrap;
+
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 1px solid red;
+    
+    /* pero no queremos que los objetos cambien su tama˜õ para entrar dentro del la linea flex del padre */
+    flex-shrink: 0; /*pero ahora hace que se deborde a la derecha con barra de desplazamiento*/
+}
+
+.event-list{
+    display: flex;
+     flex-wrap: wrap;
+    /* justify-content: space-around;  */
+}
+
+.event-list-title{
+    margin-left: 10px;
+}
+
+.event {
+    border: 1px solid none;
+    margin: 10px;
+    width: 480px;
+    flex-shrink: 0;
+    border-radius: 10px;
+
+    /* ses ve una punta de la imagen que sobresale el borde redondeado */
+    /* cuando un elemento se desborde se ocultara */
+    overflow: hidden;
+    background: #b0eef1; 
+}
+
+.event img{
+    width:  480px;
+    height: 200px;
+
+    /* antes de esta linea se ve como estirada, aunque se come
+    de los costados */
+    object-fit: cover;
+}
+
+.event-detail{
+    margin: 20px 40px;
+    margin-top: -40px;
+    background-color: white;
+
+    /* permite que la el texto se superponga a la imagen */
+    position: relative;
+    padding: 20px; /*para que nos se pegue el texto al margen*/
+    text-align: center;
+}
+
+.event-description{
+    text-align: justify;
+}
+
+.event-url{
+    color: #022f31;
+    border: 1px solid #022f31;
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+.contact{
+    background: #026fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer{
+    color: white;
+    background-color: #1b2127; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer img{
+    vertical-align: middle;
+}
+
+.footer a{
+    color: white;
+}
+
+.social{
+    /* border: 1px solid red; */
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    /* border: 1px solid white; */
+    background-size: 50px 50px;
+    
+}
+
+.social-link.twitter{
+    background-image: url(../images/twitter.svg);
+
+    /* debido al tipo de imagen svg es nesario darle tamaño al fondo
+    ya que de lo contrario no se mostrarâ */
+    /* background-size: 50px 50px; */
+    /* se comenta ya que se esta ubicando en el padre social-link */
+}
+.social-link.facebook{
+    background-image: url(../images/facebook.svg);
+    
+}
+.social-link.github{
+    background-image: url(../images/github.svg);
+}
+.social-link.instagram{
+    background-image: url(../images/instagram.svg);
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 20px 10px 25px;
+    background-image: url(../images/envelope.svg);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    padding: 10px 0px;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.form-email h3{
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.container {
+    border: 1px solid red;
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+}
