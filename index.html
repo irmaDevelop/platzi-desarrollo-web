@@ -11,7 +11,22 @@
     <link rel="icon" type="images/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans+KR" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+    <!-- screen and (max-width:768px) se lee, para pantallas con ancho 768px a menos -->
+    <!-- <link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)" /> -->
+    <link rel="stylesheet" href="css/estilos.css"/>
+    <!-- para que no pierda legibilidad la pagina al escalarse debido al cambio de tamaño de la pantalla-->
+    <!-- width initia-scale maximun-scale-->
+    <!-- <meta name="viewport" content="width=480"> -->
+
+    <!-- <style>
+        @media screen and (max-width:768px){
+            body{
+                border: 10px solid blue;
+            }
+        }
+    </style> -->
+
+    <meta name="viewport" content="width=device-width, initia-scale=1">
 </head>
 <body>
     <header class="header">  
@@ -37,7 +52,7 @@
     <section class="hero">
         <div class="container">
             <h1>
-                Hola! soy <strong> Irma Davila </strong>, <br/>Desarrolladora <strong>WordPress</strong> con <br/> ganas de <strong>cuidar el planeta</strong> y ayudar a los demás
+                Hola! soy <strong> Irma Davila </strong>, <br/>Desarrolladora <strong>WordPress</strong> con <br/> entusiasta del <strong>cuidado del planeta</strong> y ayudar a los demás
             </h1>
             <img class="hero-image" src="images/IMAGEN_HERO.jpg" width="500" height="300" alt="Imagen principal del sitio"/> 
         </div>
