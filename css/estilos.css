@@ -76,6 +76,8 @@ h2 {
     /* esta linea hace que automaticamente los elementos pierdan el margen */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
 }
 
 .hero-image{
@@ -140,7 +142,7 @@ h2 {
 }
 
 .project-description{
-    font-size: 18px;
+    font-size: 20   px;
 }
 
 .project strong{
@@ -166,8 +168,9 @@ header{
     color: black; /* para dar color a los textos */
     display: flex;
     align-items: center;
-    height: 60px; /* obtenido del alto del logo 128 */
+    height: 70px; /* obtenido del alto del logo 128 */
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 ol, ul{
     margin: 0;
@@ -377,7 +380,9 @@ ol {
 
 .container {
     border: 1px solid red;
-    width: 1000px;
+    /* width: 1000px;  cambiamos el valor fijo*/
+    max-width: 1000px;
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -393,9 +398,7 @@ ol {
 }
 
 @media screen and (max-width:768px){
-    body{
-        border: 10px solid green;
-    }
+
 }
 
 @media screen and (max-width:480px){
