@@ -134,7 +134,7 @@ h2 {
 }
 
 .project-details {
-    width: 500px;
+    width: 50%;
 }
 
 .project-course ,
@@ -161,8 +161,13 @@ h2 {
     margin-bottom: 10px;
 }
 
-.project-imageConteiner{
-    width: 500px;
+.project-imageContainer{
+    width: 50%;
+}
+
+/* para hacer un imagen responsive */
+.project-imageContainer img{
+    max-width: 100%;
 }
 
 header{
@@ -434,11 +439,50 @@ figure{
         text-align: center;
     }
 
+    .project{
+        /* para que la imagen baje en esta resolucion */
+        display: block;
+    }
 
+    .project-imageContainer{
+        /* para que se ajuste automaticamente */
+        width: auto;
+        /* para central la imagen */
+        text-align: center;
+    }
+
+    .project-details{
+        width: auto;
+        /* font-size: 16px; */
+    }
+
+    .project-course, .project-date, .project-url{
+        margin: .3em 0;
+    }
+
+    .project-title{
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+    .project-url{
+        font-size: 1em;
+    }
+    .project-course{
+        font-size: .7em;
+    }
+    .project-date{  
+        font-size: 1em; 
+    }
+    .project-description{
+        font-size: .8em;
+    }
 }
 
 @media screen and (max-width:480px){
-    
+    .project-details{
+        /* width: auto; */
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:320px){
