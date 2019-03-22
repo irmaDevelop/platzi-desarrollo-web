@@ -29,20 +29,22 @@ body{
     margin: 0; 
 }
 
-h1, h2, h3, h4, h5, h6{
-    
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6{    
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: normal; /* que es lo mismo que el valor de 400 */
     /* font-style: italic; */
-    
 }
-
 
 h1{
     font-size: 30px;
-    line-height: 1.5em; /*Si es 0px las lineas se sobreponen, como minimo debe tener el el valor del tamaño de la fuente */
+    line-height: 1.5; /*Si es 0px las lineas se sobreponen, como minimo debe tener el el valor del tamaño de la fuente */
                         /*1.5em que es lo mismo que 150% */
-    letter-spacing: 2.1px;
+    letter-spacing: -.2px;
     /* text-transform: uppercase; */
     /* text-decoration: underline; */
     color: white;
@@ -60,7 +62,7 @@ h2 {
     text-transform: uppercase;
     font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 40px;
 }
 
@@ -128,7 +130,7 @@ h2 {
     display: flex;
     align-items: center; 
     justify-content: space-between;
-
+    flex-wrap: wrap;
 }
 
 .project-details {
@@ -167,8 +169,9 @@ header{
     background-color:#07dfea;
     color: black; /* para dar color a los textos */
     display: flex;
-    align-items: center;
+    
     height: 70px; /* obtenido del alto del logo 128 */
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -196,7 +199,7 @@ figure{
     height: inherit;
 }
 
-ol {
+.header ol {
     display: flex;
     /* herencia explicita es decir del padre menu*/
     height: inherit;
@@ -248,7 +251,7 @@ ol {
 }
 
 .event {
-    border: 1px solid none;
+    /* border: 1px solid none; */
     margin: 10px;
     width: 480px;
     flex-shrink: 0;
@@ -281,7 +284,7 @@ ol {
 }
 
 .event-description{
-    text-align: justify;
+    text-align: left;
 }
 
 .event-url{
@@ -300,6 +303,7 @@ ol {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer{
@@ -308,6 +312,7 @@ ol {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img{
@@ -365,7 +370,6 @@ ol {
 
 .form-email button{
     display: block;
-    margin-top: 10px;
     background: transparent;
     color: white;
     padding: 10px 0px;
@@ -379,10 +383,15 @@ ol {
 }
 
 .container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* width: 1000px;  cambiamos el valor fijo*/
+
+    /* truco para que ocupe el 100% hasta un tamaño de 1000px */
     max-width: 1000px;
+    /* width: 100%; */
+    /* esto es lo mismo que la linea anterior comentada */
     flex: 1;
+    
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -397,7 +406,34 @@ ol {
 
 }
 
-@media screen and (max-width:768px){
+/* consideramos un pixel por debajo del tamaño del ipad 768 */
+@media screen and (max-width:767px){
+    .header{
+        display: block;
+        /* para que el alto del header se autoacomode y ambarque al menu cuando cae */
+        height: auto;
+    }
+
+    .header ol{
+        /* se asigna el valor inicial que haya tenido la propiedad display, lo mismo que block */
+        display: initial;
+    }
+
+    .header ol li{
+        /* le da mayor separacion a los elemento del menu */
+        height: 40px;
+    }
+
+    .header a{
+        /* centra los elementos a del menu */
+        justify-content: center;
+    }
+
+    .header .logo{
+        /* permite centrar el logo */
+        text-align: center;
+    }
+
 
 }
 
