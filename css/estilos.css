@@ -257,8 +257,8 @@ figure{
 
 .event {
     /* border: 1px solid none; */
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     flex-shrink: 0;
     border-radius: 10px;
 
@@ -405,10 +405,40 @@ figure{
     flex-wrap: inherit;
 }
 
+.html-video{
+    width:100%;
+    /* max-width: 100%; */
+    height: auto;
+}
+
 /* desktop first: empieza desde el media query más grande */
 
 @media screen and (max-width:1024px){
+    .container{
+        padding: 0 1em;
+    }
 
+    .hero{
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+
+    .hero-image{
+        position: absolute;
+        z-index: 1;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
 }
 
 /* consideramos un pixel por debajo del tamaño del ipad 768 */
@@ -476,15 +506,73 @@ figure{
     .project-description{
         font-size: .8em;
     }
+    .event{
+        width: auto;
+        /* la siguiente linea estaba haciendo que el area del texto se mantenga ampliado */
+        flex-shrink: initial;
+    }
+
+    /* .event-image{
+        width: 100%;
+    } */
+    /* lo anterior no funciona por que hay una etiqueta con los valores y prevalece sobre la clase */
+
+    .event img{
+        width: 100%;
+    }
+
 }
 
 @media screen and (max-width:480px){
+    h1{
+        font-size: 1.5em;
+    }
+    
     .project-details{
         /* width: auto; */
         font-size: 12px;
     }
+
+    .event-detail{
+        /* margin: 10px; */
+        /* 1em = 16px valor default */
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact{
+        height: auto;
+        padding: 1em 0;
+        /* hacemos */
+        text-align: center;
+        /* pero nada sucede ya que tiene un flex que malogra el modelo de caja*/
+        display: block;
+    }
+
+    /* hasta aqui, todo se centra menos el boton y es porque no tiene margenes laterales*/
+    .form-email button{
+        margin: 1.5em auto;
+    }
+
+    .form-email h3{
+        margin-top: 0;
+    }
+
+    /* el display flex ayudaba cuando queriamos que los elementos aparescan al costado del otros */
+    .footer{
+        display: block;
+        text-align: center;
+        /* para que los bordes no se colapsen */
+        border: 1px solid transparent;
+    }
 }
 
 @media screen and (max-width:320px){
-    
+    h1{
+        font-size: 1.2em;
+    }
+
+  .hero{
+      padding: 2em 1em;
+  }
 }
