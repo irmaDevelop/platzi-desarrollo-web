@@ -29,6 +29,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <i class="icon-menu"></i>
+
     <header class="header">  
         <div class="container">
             <figure class="logo">
@@ -91,12 +93,10 @@
         </div>
     </section>
 
-    <video class="html-video" src="videos/plogging.mp4" width="1280" height="720" controls></video>
-
     <div class="container">
         <h2 class="event-list-title">Mas sobre mi experiencia</h2>
     </div>
-    
+
     <section id="eventos" class="event-list">
         <div class="container">
             <article class="event">
@@ -123,7 +123,10 @@
             </article>
             <article class="event">
                 <figure class="event-imageContainer">
-                    <img class="event-image" src="images/IMG_20171209_103414.jpg" width="500" alt="Imagen de la PlatziConf"/> 
+                    <div class="flexible-video">
+                        <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/YmOf757B2T4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <!-- <img class="event-image" src="images/IMG_20171209_103414.jpg" width="500" alt="Imagen de la PlatziConf"/>  -->
                 </figure>
                 <div class="event-detail">
                     <h3 class="event-title">PlatziConf Mexico 2018</h3>
@@ -155,10 +158,10 @@
                 <button>Enviar</button>
             </form>
             <div class="social">
-                <a href="https://twitter.com/irmaDevelop"           class="social-link twitter"  target="_blank"></a>
-                <a href="https://www.facebook.com/irma.davila2"     class="social-link facebook" target="_blank"></a>
-                <a href="https://github.com/irmaDevelop"            class="social-link github"   target="_blank"></a>
-                <a href="hhttps://www.instagram.com/irmaDevelop/"   class="social-link instagram"target="_blank"></a>
+                <a href="https://twitter.com/irmaDevelop"           class="social-link icon-twitter"  target="_blank"></a>
+                <a href="https://www.facebook.com/irma.davila2"     class="social-link icon-facebook" target="_blank"></a>
+                <a href="https://github.com/irmaDevelop"            class="social-link icon-github"   target="_blank"></a>
+                <a href="hhttps://www.instagram.com/irmaDevelop/"   class="social-link icon-instagram"target="_blank"></a>
             </div>
         </div>
     </section>
