@@ -240,7 +240,9 @@ figure{
     /* hace que el logo por ejemplo se peque todalmente al filo
     de la pantalla */
     margin: 0;
+    
 }
+
 
 .header a{
     color: black;
@@ -482,6 +484,33 @@ figure{
     position: relative;
 }
 
+.burguer-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    /* display: block; */
+    display: none;
+    color: white;
+
+    /* 1era forma para centrar el icono en burguer-button */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    /* 2da forma para centrar el icono en el burguer-button */
+    line-height: 40px; /*el mismo valor que el alto height centra vertical */
+    text-align: center; 
+
+    /* Queremos que el elemento nos persiga durante el scroll vertical. */
+    position: fixed;
+    z-index: 4;
+
+    /* para sacarlo un poco de la esquina */
+    left: 5px;
+    top: 5px;
+}
+
 /* desktop first: empieza desde el media query más grande */
 
 @media screen and (max-width:1024px){
@@ -514,6 +543,10 @@ figure{
 
 /* consideramos un pixel por debajo del tamaño del ipad 768 */
 @media screen and (max-width:767px){
+    .burguer-button{
+        display: block;
+    }
+
     .header{
         display: block;
         /* para que el alto del header se autoacomode y ambarque al menu cuando cae */
@@ -522,22 +555,61 @@ figure{
 
     .header ol{
         /* se asigna el valor inicial que haya tenido la propiedad display, lo mismo que block */
-        display: initial;
+        display: block;
     }
 
     .header ol li{
         /* le da mayor separacion a los elemento del menu */
-        height: 40px;
+        height: 100px;
     }
 
     .header a{
         /* centra los elementos a del menu */
         justify-content: center;
+
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
     }
 
     .header .logo{
         /* permite centrar el logo */
         text-align: center;
+    }
+
+    .menu{
+        position: fixed;
+        background: rgba(7, 223, 234, .9);
+        z-index: 3;
+        top: 0;
+
+        /* permite interpolacion */
+        left: -100vw;
+
+        /* con esto tendremos el 100% del ancho que tenemos en mi viewport */
+        width: 100vw;
+        /* height: 100vh; */
+
+        /* opta por centrar con un bottom:0 */
+        bottom: 0;
+
+
+        /* centrar elementos alla adentro */
+        display: flex;
+        align-items:center; 
+        justify-content: center;
+        /* lo anterior no funciono */
+        transition: .3s;
+    }
+
+    .menu.is-active{
+        left: 0;
+    }
+
+    .header .logo img{
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .project{
