@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <i class="icon-menu burguer-button"></i>
+    <i class="icon-menu burguer-button" id="burger-menu"></i>
 
     <header class="header">  
         <div class="container">
@@ -178,6 +178,50 @@
             </div>
         </div>
     </footer>
+    <script>
+        // console.log('Hola Mundo, es mi primera linea en JS');
+        ipad = window.matchMedia('screen and (max-width: 767px)')
+        // console.log(ipad);
+        //la siguiente linea trae el codigo html de la case menu
+        // console.log(document.querySelector('.menu'));
 
+        //La siguiente linea agrega la clases is-active a la clase menu
+        const menu = document.querySelector('.menu');
+        // console.log(menu);
+        //creamos id="burguer-menu" y agregamos la siguiente linea
+        const burguerButton = document.querySelector('#burger-menu');
+        // console.log(burguerButton);
+        // menu.classList.add('is-active');
+        //lo anterior es igual que document.querySelector('.menu').classList.add('is-active');
+        //hasta aqui el munu fijo ya se visualiza automaticamante
+        //y no hay estar agregando manualmente por el inspector
+        //o desde el codigo html
+
+        // burguerButton.addEventListener('click', hideShow);
+        
+        ipad.addListener(validation);
+        
+        //para el listener se prenda solo en caso de estar en resolucion de ipad o menores
+        function validation(event){
+            if (event.matches){
+                burguerButton.addEventListener('click', hideShow);
+            }else {
+                burguerButton.removeEventListener('click', hideShow);
+            }
+            // console.log(event.matches);
+        }
+
+        validation(ipad);
+        
+        function hideShow(){
+            if(menu.classList.contains('is-active')){
+                menu.classList.remove('is-active');
+            }else{
+                menu.classList.add('is-active');
+            }   
+        }
+
+
+    </script>
 </body>
 </html> 
