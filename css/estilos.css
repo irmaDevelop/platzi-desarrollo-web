@@ -513,7 +513,15 @@ figure{
 
 /* desktop first: empieza desde el media query más grande */
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1023px){
+.portfolio{
+    padding: 0;
+}
+
+    .event-list-title {
+        margin-left: 0;
+    }
+
     .container{
         padding: 0 1em;
     }
@@ -543,6 +551,11 @@ figure{
 
 /* consideramos un pixel por debajo del tamaño del ipad 768 */
 @media screen and (max-width:767px){
+    h2{
+        font-size: 1.2em;
+        margin: .5em 0;
+    }
+
     .burguer-button{
         display: block;
     }
@@ -647,7 +660,7 @@ figure{
         font-size: 1em; 
     }
     .project-description{
-        font-size: .8em;
+        font-size: 1em;
     }
     .event{
         width: auto;
@@ -673,7 +686,7 @@ figure{
     
     .project-details{
         /* width: auto; */
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .event-detail{
@@ -708,6 +721,12 @@ figure{
         /* para que los bordes no se colapsen */
         border: 1px solid transparent;
     }
+
+    .social-link{
+        width: 40px;
+        height: 40px;
+        background-size: 100%;
+    }
 }
 
 @media screen and (max-width:320px){
@@ -718,4 +737,5 @@ figure{
   .hero{
       padding: 2em 1em;
   }
+  
 }
